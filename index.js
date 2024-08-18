@@ -5,6 +5,19 @@ const express = require("express");
 //create an express application
 const app = express();
 
+//import mongoose
+const mongoose = require("mongoose");
+
+//open connection with mongoDB
+mongoose
+  .connect("mongodb://localhost:27017")
+  .then(() => {
+    console.log("Successfully connected to MongoDB locally!");
+  })
+  .catch((error) => {
+    console.log("Couldn't connect to MongoDB locally.Error: ", error);
+  });
+
 //Define route handler
 //Avoiding this would result in "Cannot GET /" error
 app.get("/", (request, response) => {
