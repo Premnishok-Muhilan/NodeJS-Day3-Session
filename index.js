@@ -10,9 +10,11 @@ const mongoose = require("mongoose");
 
 //open connection with mongoDB
 mongoose
-  .connect("mongodb://localhost:27017")
+  .connect("mongodb://localhost:27017/fsd56wee")
   .then(() => {
-    console.log("Successfully connected to MongoDB locally!");
+    console.log(
+      "Successfully connected to MongoDB locally with fsd56wee database!"
+    );
   })
   .catch((error) => {
     console.log("Couldn't connect to MongoDB locally.Error: ", error);
