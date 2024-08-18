@@ -1,6 +1,8 @@
 //BACKEND SERVER USING EXPRESS.JS
 const app = require("./app");
 
+const { MONGO_DB_URL, PORT } = require("./utils/config");
+
 //import mongoose
 const mongoose = require("mongoose");
 
@@ -9,7 +11,7 @@ require("dotenv").config();
 
 //open connection with mongoDB
 mongoose
-  .connect(process.env.MONGO_DB_URL)
+  .connect(MONGO_DB_URL)
   .then(() => {
     console.log("Successfully connected to MongoDB Atlas");
   })
@@ -18,6 +20,6 @@ mongoose
   });
 
 //start the server and listen on port
-app.listen(3001, () => {
-  console.log("Express server listening on port 3001");
+app.listen(PORT, () => {
+  console.log(`Express server listening on port ${PORT}`);
 });
