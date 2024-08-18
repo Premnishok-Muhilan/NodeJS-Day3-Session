@@ -14,4 +14,5 @@ const todoSchema = new mongoose.Schema({
 });
 
 //create a model and export it
-module.exports = mongoose.model('Todo',todoSchema,'todos') 
+//mongoose.model(name_of_model,schema,collection_name)
+module.exports = mongoose.model("Todo", todoSchema, "todos");
