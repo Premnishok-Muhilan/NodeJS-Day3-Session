@@ -8,16 +8,19 @@ const app = express();
 //import mongoose
 const mongoose = require("mongoose");
 
+//import dotenv
+require('dotenv').config();
+
 //open connection with mongoDB
 mongoose
-  .connect("mongodb://localhost:27017/fsd56wee")
+  .connect(process.env.MONGO_DB_URL)
   .then(() => {
     console.log(
-      "Successfully connected to MongoDB locally with fsd56wee database!"
+      "Successfully connected to MongoDB Atlas"
     );
   })
   .catch((error) => {
-    console.log("Couldn't connect to MongoDB locally.Error: ", error);
+    console.log("Couldn't connect to MongoDB Atlas.Error: ", error);
   });
 
 //Define route handler
